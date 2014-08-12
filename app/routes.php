@@ -31,3 +31,5 @@ Route::get('logout', 'AuthController@doLogout');
 //Users Controller
 Route::get('follow/{user}', 'UsersController@follow');
 
+Route::get('profile/{user}', 'UsersController@profile');
+

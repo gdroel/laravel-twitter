@@ -1,17 +1,37 @@
-<h1>Tweets</h1>
-@if(Auth::check())
-u r logged in as {{ Auth::user()->name }}
-@endif
-<h2><a href="{{ action('PostsController@showCreate') }}">Create</a></h2>
-@foreach($users as $user)
+@extends('layout')
 
-<h3><a href="{{ action('UsersController@follow', $user->id) }}">{{ $user->name }}</a></h3>
+@section('content')
+<div class="container">
 
-@endforeach
+	@if(Auth::check())
 
-<h1>News Feed</h1>
-@foreach($newsFeed as $post)
+		<div class="col-md-6">
+			<h1>News Feed</h1>
+			@foreach($newsFeed as $post)
+			<div class="tweet">
+				<strong>{{ $post->user->username }}</strong>
+				<p>{{ $post->user->updated_at }}</p>
+				<p>{{ $post->body }}</p>
+			</div>
+			@endforeach
+		</div>
 
-<p>{{ $post->body }}</p>
+		<div class="col-md-3">
+			<h2>Followers</h2>
+			@foreach(Auth::user()->followers as $follower)
+				<p>{{ $follower->name }}</p>
+			@endforeach
+		</div>
 
-@endforeach
+	@endif
+
+	<div class="col-md-3">
+		<h3>People you can follow:</h3>
+		@foreach($users as $user)
+			<p><a href="{{ action('UsersController@follow', $user->id) }}">{{ $user->name }}</a></p>
+		@endforeach
+	</div>
+</div>
+
+@stop
+

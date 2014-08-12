@@ -4,12 +4,10 @@ class PostsController extends BaseController{
 
 	public function index(){
 
-		$id=Auth::user()->id;
-
 		$posts=Post::all();
 		$users=User::all();
 		$newsFeed=Post::newsFeed();
-
+	
 		return View::make('posts.index',compact('posts','users','newsFeed'));
 	}
 
