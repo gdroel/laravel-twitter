@@ -6,10 +6,19 @@ class UsersController extends BaseController{
 
 		//$follower = Person following the other person
 		//$user = Person being followed
-		$follower = Auth::user();
 
-		$follower->follow()->save($user);
+		if(DB::table('user_follows')->where('user_id',$user->id)->where('follow_id',Auth::user()->id)->exists()){
 
+		echo 'u cant do dat';
+
+		}
+
+		else{
+
+			$follower = Auth::user();
+			$follower->follow()->save($user);
+		}
+		
 		return Redirect::action('PostsController@index');
 	
 	}

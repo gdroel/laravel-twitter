@@ -15,7 +15,7 @@ class Post extends Eloquent{
 			  $query->select('follow_id')
 			        ->from('user_follows')
 			        ->where('user_id', Auth::user()->id);
-			})->orWhere('user_id', Auth::user()->id)->get();
+			})->orWhere('user_id', Auth::user()->id)->orderBy('id','DESC')->get();
 
 		return $posts;
 

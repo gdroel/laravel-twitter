@@ -1,6 +1,41 @@
 .tweet{
 
 	padding: 20px;
-	border: 1px solid black;
-	
+	border-bottom: 1px solid #C8C8C8;
+}
+
+.newsfeed{
+
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border-radius: 5px; /* future proofing */
+
+}
+
+.newsfeed{
+
+}
+
+textarea{ 
+
+  height:100px; 
+  min-height:100px;  
+  max-height:100px;
+}
+
+.navbar-default{
+
+	padding: 5px;
+	background-color: white;
+	border-bottom: 5px solid yellow;
+}
+
+#newsfeed{
+
+	border-top: 5px solid #0784EF
+}
+
+#newsfeed .panel-heading{
+
+	background-color: white;
 }

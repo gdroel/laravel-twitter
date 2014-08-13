@@ -51,7 +51,7 @@
         </form>
         <ul class="nav navbar-nav navbar-right">
           @if(Auth::check())
-          <p class="navbar-text navbar-right">Signed in as <a href="#" class="navbar-link">{{Auth::user()->name}}</a></p>
+          <p class="navbar-text navbar-right">Signed in as <a href="{{ action('UsersController@profile',Auth::user()->id) }}" class="navbar-link">{{Auth::user()->name}}</a></p>
           @endif
         </ul>
       </div><!-- /.navbar-collapse -->

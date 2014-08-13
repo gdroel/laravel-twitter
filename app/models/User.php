@@ -37,4 +37,22 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
 
 		return $this->belongsToMany('User', 'user_follows', 'follow_id', 'user_id');
 	}
+
+	//users where user id is not equal to auth id
+
+	public static function isFollowing(){
+
+		if(DB::table('user_follows')->where('follow_id',$user->id)->where('user_id',Auth::user()->id)->exists()){
+
+			return true;
+		}
+
+		else{
+
+			return false;
+		}
+
+		
+	}
+
 }

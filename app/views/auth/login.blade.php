@@ -13,7 +13,7 @@
 	{{ Form::text('email',null, array('class'=>'form-control')) }}
 
 	{{ Form::label('password','Password')}}
-	{{ Form::text('password',null,array('class'=>'form-control')) }}
+	{{ Form::password('password',array('class'=>'form-control')) }}
 
 	<br>
 	{{ Form::submit('login',array('class'=>'btn btn-success')) }}

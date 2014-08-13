@@ -1,16 +1,26 @@
-{{ Form::open(array('action'=>'AuthController@doRegister')) }}
+@extends('layout')
 
-{{ Form::label('name','Name') }}
-{{ Form::text('name') }}
+@section('content')
 
-{{ Form::label('username','Username') }}
-{{ Form::text('username') }}
+<div class="container">
+<div class="col-md-4 col-md-offset-4">
+	<h1>Register</h1>
+	{{ Form::open(array('action'=>'AuthController@doRegister')) }}
 
-{{ Form::label('email','Email') }}
-{{ Form::text('email') }}
+	{{ Form::label('name','Name') }}
+	{{ Form::text('name',null,array('class'=>'form-control')) }}
 
-{{ Form::label('password','Password') }}
-{{ Form::password('password') }}
+	{{ Form::label('username','Username') }}
+	{{ Form::text('username',null,array('class'=>'form-control')) }}
 
-{{ Form::submit('Sign Up') }}
-{{ Form::close() }}
+	{{ Form::label('email','Email') }}
+	{{ Form::text('email',null,array('class'=>'form-control')) }}
+
+	{{ Form::label('password','Password') }}
+	{{ Form::password('password',array('class'=>'form-control')) }}
+	<br>
+	{{ Form::submit('Sign Up', array('class'=>'btn btn-success')) }}
+	{{ Form::close() }}
+</div>
+</div>
+@stop

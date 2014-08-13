@@ -4,7 +4,7 @@ class PostsController extends BaseController{
 
 	public function index(){
 
-		$posts=Post::all();
+		$posts=Post::orderBy('id','DESC');
 		$users=User::all();
 		$newsFeed=Post::newsFeed();
 	
@@ -27,4 +27,6 @@ class PostsController extends BaseController{
 
 		return Redirect::action('PostsController@index');
 	}
+
+
 }
