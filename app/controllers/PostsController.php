@@ -4,11 +4,15 @@ class PostsController extends BaseController{
 
 	public function index(){
 
+		$suggested = Auth::user()->follow()->select('users.id')->lists('id');
+
+		$suggested = User::whereNotIn('id', $suggested)->where('id','!=', Auth::user()->id)->get();
+
 		$posts=Post::orderBy('id','DESC');
 		$users=User::all();
 		$newsFeed=Post::newsFeed();
 	
-		return View::make('posts.index',compact('posts','users','newsFeed'));
+		return View::make('posts.index',compact('posts','users','newsFeed','suggested'));
 	}
 
 	public function showCreate(){

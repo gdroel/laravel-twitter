@@ -53,18 +53,10 @@
 			<div class="panel panel-default">
 			<div class="panel-heading">Suggested Users</div>
 			<div class="panel-body">
-				@foreach($users as $user)
-
+				@foreach($suggested as $user)
 		
-
-				@if(DB::table('user_follows')->where('follow_id',$user->id)->where('user_id',Auth::user()->id)->exists())
-
-				<p>{{ $user->name }} <a class="btn btn-danger pull-right">Unfollow</a></p>
-
-				@else
-
-				<p>{{$user->name}} <a class="btn btn-info pull-right" href="{{ action('UsersController@follow', $user->id) }}">Follow</a></p>
-				@endif
+				<p>{{ $user->name }} <a href="{{ action('UsersController@follow', $user->id) }}" class="btn btn-default pull-right">Follow</a></p>
+		
 				<hr>
 				@endforeach
 			</div>

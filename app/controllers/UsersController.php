@@ -6,7 +6,7 @@ class UsersController extends BaseController{
 
 		//$follower = Person following the other person
 		//$user = Person being followed
-
+		
 		if(DB::table('user_follows')->where('user_id',$user->id)->where('follow_id',Auth::user()->id)->exists()){
 
 		echo 'u cant do dat';
@@ -21,6 +21,17 @@ class UsersController extends BaseController{
 		
 		return Redirect::action('PostsController@index');
 	
+	}
+
+	public function unFollow(User $user){
+
+		$id = $user->id;
+
+		$authUser = Auth::user();
+
+		$authUser->follow()->detach($user);
+
+		return Redirect::back();
 	}
 
 	public function profile(User $user){
