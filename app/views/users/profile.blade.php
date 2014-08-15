@@ -21,7 +21,7 @@
 	<div class="col-md-3">
 		<h3>Following ({{ $following }})</h3>
 		@foreach($user->follow as $user)
-		<li>{{ $user->name }}</li>
+		<li><a href="{{ action('UsersController@unFollow', $user->id) }}">{{ $user->name }}</a></li>
 		@endforeach
 	</div>
 

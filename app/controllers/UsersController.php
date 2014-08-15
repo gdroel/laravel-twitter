@@ -6,7 +6,7 @@ class UsersController extends BaseController{
 
 		//$follower = Person following the other person
 		//$user = Person being followed
-		
+
 		if(DB::table('user_follows')->where('user_id',$user->id)->where('follow_id',Auth::user()->id)->exists()){
 
 		echo 'u cant do dat';
@@ -41,5 +41,10 @@ class UsersController extends BaseController{
 		$followers = $user->followers()->count();
 
 		return View::make('users.profile',compact('user','posts','following','followers'));
+	}
+
+	public function followers(User $user){
+
+		return View::make('users.followers',compact('user'));
 	}
 }

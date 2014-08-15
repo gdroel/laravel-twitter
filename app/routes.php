@@ -33,4 +33,4 @@ Route::get('follow/{user}', 'UsersController@follow');
 Route::get('unfollow/{user}', 'UsersController@unFollow');
 
 Route::get('profile/{user}', 'UsersController@profile');
-
+Route::get('/profile/{user}/followers/','UsersController@followers');

@@ -12,7 +12,7 @@
 				</div>
 				<div class="panel-body">
 				@foreach($newsFeed as $post)
-				<div class="tweet">
+				<div class="circleBase type1">
 					<strong>{{ $post->user->username }}</strong>
 					<p>{{ $post->user->updated_at }}</p>
 					<p>{{ $post->body }}</p>

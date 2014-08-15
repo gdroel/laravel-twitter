@@ -39,3 +39,20 @@ textarea{
 
 	background-color: white;
 }
+
+.gray{
+
+	color:gray;
+}
+
+.circleBase {
+border-radius: 50%;
+behavior: url(PIE.htc); /* remove if you don't care about IE8 */
+}
+
+.type1 {
+    width: 100px;
+    height: 100px;
+    background: yellow;
+    border: 3px solid red;
+}
