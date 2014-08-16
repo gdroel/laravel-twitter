@@ -45,14 +45,75 @@ textarea{
 	color:gray;
 }
 
+body{
+
+  background-image:url('../images/triangular.png');
+  background-repeat: repeat;
+}
 .circleBase {
 border-radius: 50%;
 behavior: url(PIE.htc); /* remove if you don't care about IE8 */
 }
 
-.type1 {
-    width: 100px;
-    height: 100px;
-    background: yellow;
-    border: 3px solid red;
+.type1,.overlay {
+	margin-top: 100px;
+    width: 200px;
+    height: 200px;
+    background-color: none;
+    border: 1px solid gray;
+    margin: 0 auto;
+    padding: 50px;
+    text-align: center;
+}
+
+.type1{
+
+  background-color: white;
+}
+
+.padding{
+
+
+}
+
+.gray{
+
+  color: gray;
+}
+.down100{
+
+  margin-top: 50px;
+}
+
+p{
+
+  font-family: 'Lato', sans-serif;
+  text-align: center;
+  font-size: 15px;
+}
+
+strong{
+
+  text-align: center;
+}
+
+hr{
+
+     display: block;
+margin: 3px 0;
+}
+
+.overlay{
+
+  margin-top: -200px;
+  background-color:rgba(200,200,200,.8);
+}
+.navbar-default{
+
+  background: white;
+  border: none;
+}
+.movedown{
+
+	margin-top: 50px;
 }

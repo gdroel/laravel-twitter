@@ -61,7 +61,33 @@
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script type="text/javascript">
+google.load("jqueryui", "1.5.2");
+</script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+
+    <script>
+
+$(document).ready(function(){
+
+  $('.overlay').hide();
+  $('.date').hide();
+
+  $(".circleBase.type1").mouseenter(function(){
+      $(this).next(".overlay").fadeIn("fast");
+      $(this).next(".overlay").find('.date').show();
+      $(this).find('.hidetext').hide();
+  });
+
+  $(".overlay").mouseleave(function(){
+          $(this).fadeOut("fast");
+          $(this).find('.date').hide();
+          $(this).prev(".circleBase").find('.hidetext').show();
+      });
+});
+
+
+</script>
   </body>
 </html>
